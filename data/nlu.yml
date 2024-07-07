@@ -1,0 +1,29 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hello
+    - hi
+    - hey
+    - good morning
+    - good afternoon
+    - good evening
+
+- intent: provide_job_description
+  examples: |
+    - The job title is "Data Analyst." The responsibilities include data analysis, report generation, and working with SQL databases. The qualifications include a degree in Computer Science or a related field and proficiency in data analysis tools.
+    - We are hiring a project manager. The responsibilities include overseeing project timelines, managing budgets, and leading teams. The qualifications include a degree in Business Administration or a related field and experience in project management.
+
+- intent: affirm
+  examples: |
+    - yes
+    - yeah
+    - sure
+    - of course
+
+- intent: deny
+  examples: |
+    - no
+    - nope
+    - not really
+    - I don't think so

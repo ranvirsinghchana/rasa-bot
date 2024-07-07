@@ -1,0 +1,51 @@
+version: "3.1"
+intents:
+  - greet
+  - provide_job_description
+  - affirm
+  - deny
+
+entities:
+  - job_description
+  - additional_info
+
+slots:
+  job_description:
+    type: text
+    mappings:
+      - type: from_text
+  additional_info:
+    type: text
+    mappings:
+      - type: from_text
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you today? Please select an option below to proceed."
+      buttons:
+        - title: "Hi"
+          payload: '/greet'
+
+  utter_ask_job_description:
+    - text: "Please provide the job description."
+
+  utter_ask_more_info:
+    - text: "Do you want to add more information to the job description?"
+      buttons:
+        - title: "Yes"
+          payload: '/affirm'
+        - title: "No"
+          payload: '/deny'
+
+  utter_ask_additional_info:
+    - text: "Please add the additional details."
+
+  utter_provide_recommendations:
+    - text: "Here are the top program recommendations:\n\n{recommendations}"
+
+actions:
+  - action_provide_recommendations
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

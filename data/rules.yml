@@ -1,0 +1,23 @@
+version: "3.1"
+rules:
+- rule: greet and ask job description
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: greet
+  - action: utter_ask_job_description
+
+- rule: provide job description and ask for more info
+  steps:
+  - intent: provide_job_description
+  - action: utter_ask_more_info
+
+- rule: user affirms more info
+  steps:
+  - intent: affirm
+  - action: utter_ask_additional_info
+
+- rule: user denies more info
+  steps:
+  - intent: deny
+  - action: action_provide_recommendations
